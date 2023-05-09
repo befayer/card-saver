@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="card-saver">
+        <createTable tableName="ACCOUNT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ACCOUNT"/>
+            </column>
+            <column name="BANK_ID" type="UUID"/>
+            <column name="CURRENCY_ID" type="UUID"/>
+            <column name="ACCOUNT_STATUS" type="BOOLEAN"/>
+            <column name="BALANCE" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="card-saver">
+        <createTable tableName="BANK">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_BANK"/>
+            </column>
+            <column name="BANK_NAME" type="VARCHAR(255)"/>
+            <column name="BIK" type="VARCHAR(255)"/>
+            <column name="CITY" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="card-saver">
+        <createTable tableName="CARD">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CARD"/>
+            </column>
+            <column name="DATE_START" type="DATE"/>
+            <column name="DATE_END" type="DATE"/>
+            <column name="CVC" type="INT"/>
+            <column name="IS_ACTIVE" type="BOOLEAN"/>
+            <column name="BALANCE" type="DOUBLE"/>
+            <column name="ACCOUNT_ID" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="card-saver">
+        <createTable tableName="CLIENT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CLIENT"/>
+            </column>
+            <column name="FIRST_NAME" type="VARCHAR(255)"/>
+            <column name="LAST_NAME" type="VARCHAR(255)"/>
+            <column name="PATRONYMIC" type="VARCHAR(255)"/>
+            <column name="BIRTHDAY" type="DATE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="5" author="card-saver">
+        <createTable tableName="CURRENCY">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CURRENCY"/>
+            </column>
+            <column name="CURRENCY_NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="6" author="card-saver">
+        <createTable tableName="DOCUMENT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_DOCUMENT"/>
+            </column>
+            <column name="DATE_START" type="DATE"/>
+            <column name="ISSUE_ORGANIZATION" type="VARCHAR(255)"/>
+            <column name="IS_ACTIVE" type="BOOLEAN"/>
+            <column name="DOCUMENT_TYPE_ID" type="UUID"/>
+            <column name="CLIENT_ID" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="7" author="card-saver">
+        <createTable tableName="DOCUMENT_TYPE">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_DOCUMENT_TYPE"/>
+            </column>
+            <column name="DOCUMENT_TYPE_NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="8" author="card-saver">
+        <createIndex indexName="IDX_ACCOUNT_BANK" tableName="ACCOUNT">
+            <column name="BANK_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="BANK_ID" baseTableName="ACCOUNT" constraintName="FK_ACCOUNT_ON_BANK"
+                                 referencedColumnNames="ID" referencedTableName="BANK"/>
+    </changeSet>
+    <changeSet id="9" author="card-saver">
+        <createIndex indexName="IDX_ACCOUNT_CURRENCY" tableName="ACCOUNT">
+            <column name="CURRENCY_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CURRENCY_ID" baseTableName="ACCOUNT"
+                                 constraintName="FK_ACCOUNT_ON_CURRENCY" referencedColumnNames="ID"
+                                 referencedTableName="CURRENCY"/>
+    </changeSet>
+    <changeSet id="10" author="card-saver">
+        <createIndex indexName="IDX_CARD_ACCOUNT" tableName="CARD">
+            <column name="ACCOUNT_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="ACCOUNT_ID" baseTableName="CARD" constraintName="FK_CARD_ON_ACCOUNT"
+                                 referencedColumnNames="ID" referencedTableName="ACCOUNT"/>
+    </changeSet>
+    <changeSet id="11" author="card-saver">
+        <createIndex indexName="IDX_DOCUMENT_CLIENT" tableName="DOCUMENT">
+            <column name="CLIENT_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CLIENT_ID" baseTableName="DOCUMENT"
+                                 constraintName="FK_DOCUMENT_ON_CLIENT" referencedColumnNames="ID"
+                                 referencedTableName="CLIENT"/>
+    </changeSet>
+    <changeSet id="12" author="card-saver">
+        <createIndex indexName="IDX_DOCUMENT_DOCUMENT_TYPE" tableName="DOCUMENT">
+            <column name="DOCUMENT_TYPE_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="DOCUMENT_TYPE_ID" baseTableName="DOCUMENT"
+                                 constraintName="FK_DOCUMENT_ON_DOCUMENT_TYPE" referencedColumnNames="ID"
+                                 referencedTableName="DOCUMENT_TYPE"/>
+    </changeSet>
+</databaseChangeLog>
