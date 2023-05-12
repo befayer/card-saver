@@ -1,0 +1,195 @@
+@import "custom-defaults";
+@import "addons";
+@import "custom";
+
+.custom {
+  @include addons;
+  @include custom;
+
+  /* AppMenu */
+  --menubar-menuitem-selected-background-color: #3C8AFF;
+
+  /* Basic */
+  --border-color: #625E89;
+  --error-color: #DF1537;
+  --primary-color: #3C8AFF;
+  --primary-color_rgb: 60, 138, 255;
+  --secondary-color: #9B99B1;
+  --secondary-color_rgb: 155, 153, 177;
+  --success-color: #22E185;
+  --warning-color: #FDB42B;
+
+  /* Common */
+  --error-color-shade-1: #FB042D;
+  --error-color-shade-2: #DD0328;
+  --error-dim-color: #FF5D77;
+  --primary-color-shade-1: #5159FF;
+  --primary-color-shade-2: #3F86FF;
+  --primary-dim-color: #4DA3FF;
+  --secondary-color-shade-1: #454267;
+  --secondary-color-shade-2: #3C3A5A;
+  --secondary-dim-color: #7773A5;
+  --success-color-shade-1: #1FBD76;
+  --success-color-shade-2: #1BA768;
+  --success-dim-color: #5DE5A7;
+  --warning-contrast-text-color: #454267;
+
+  /* Button */
+  --button-error-color: #DF1537;
+  --button-error-disabled-color: #FF5D77;
+  --button-error-focused-border-color: #FF5D77;
+  --button-primary-active-color: #3F86FF;
+  --button-primary-color: #3C8AFF;
+  --button-primary-disabled-color: #4DA3FF;
+  --button-primary-focused-border-color: #4DA3FF;
+  --button-primary-hover-color: #5159FF;
+  --button-secondary-color: #9B99B1;
+  --button-success-color: #22E185;
+
+  /* Calendar */
+  --calendar-event-background-color: #3C8AFF;
+  --calendar-month-day-bottom-spacer-hover-color: #3C8AFF;
+  --calendar-month-day-dragemphasis-background-color: #9B99B1;
+  --calendar-month-day-number-hover-color: #3C8AFF;
+  --calendar-month-day-selected-background-color: #4DA3FF;
+  --calendar-month-day-today-background-color: #4DA3FF;
+  --calendar-month-day-today-day-number-border-color: #3C8AFF;
+  --calendar-month-day-today-day-number-color: #3C8AFF;
+  --calendar-month-event-marker-color: #3C8AFF;
+  --calendar-week-current-time-color: #3C8AFF;
+  --calendar-week-longevents-border-color: #4DA3FF;
+  --calendar-week-range-selection-color: #4DA3FF;
+
+  /* CheckBox */
+  --checkbox-checked-border-color: #3C8AFF;
+  --checkbox-checked-color: #3C8AFF;
+  --checkbox-checked-focused-background-color: #4DA3FF;
+  --checkbox-checked-focused-border-color: #3C8AFF;
+  --checkbox-checked-focused-color: #3C8AFF;
+
+  /* DateField */
+  --datefield-calendarpanel-button-hover-color: #3C8AFF;
+  --datefield-calendarpanel-day-focused-border-color: #3C8AFF;
+  --datefield-calendarpanel-day-hover-color: #3C8AFF;
+  --datefield-calendarpanel-day-selected-background-color: #3C8AFF;
+  --datefield-calendarpanel-day-selected-focus-ring-color: #4DA3FF;
+  --datefield-calendarpanel-month-color: #9B99B1;
+  --datefield-calendarpanel-weekdays-color: #9B99B1;
+
+  /* FileUpload */
+  --fileupload-dropzone-border-color: #3C8AFF;
+
+  /* Grid */
+  --grid-details-deco-color: #3C8AFF;
+  --grid-drop-marker-color: #3C8AFF;
+  --grid-editor-border-color: #3C8AFF;
+  --grid-editor-cancel-button-color: #3C8AFF;
+  --grid-editor-save-button-color: #3C8AFF;
+  --grid-focused-cell-border-color: #3C8AFF;
+  --grid-hovered-row-background-color: #4DA3FF;
+  --grid-row-drag-background-color: #3C8AFF;
+  --grid-row-drag-border-color: #3C8AFF;
+  --grid-selected-row-background-color: #3C8AFF;
+  --grid-selected-row-border-color: #5159FF;
+  --grid-selected-row-drag-border-color: #5159FF;
+  --grid-selected-row-focus-ring-color: #4DA3FF;
+
+  /* Link */
+  --link-color: #3C8AFF;
+  --link-disabled-color: #4DA3FF;
+  --link-hover-color: #5159FF;
+  --link-visited-color: #3C8AFF;
+
+  /* Notification */
+  --notification-error-background-color: #DF1537;
+  --notification-humanized-background-color: #3C8AFF;
+  --notification-system-background-color: #9B99B1;
+
+  /* Pagination */
+  --pagination-selected-page-active-color: #3F86FF;
+  --pagination-selected-page-color: #3C8AFF;
+  --pagination-selected-page-disabled-color: #4DA3FF;
+  --pagination-selected-page-focused-border-color: #3C8AFF;
+  --pagination-selected-page-hover-color: #5159FF;
+
+  /* Panel */
+  --panel-border-color: #4DA3FF;
+
+  /* RadioButtonGroup */
+  --radio-checked-color: #3C8AFF;
+
+  /* SearchField */
+  --searchselect-edit-background-color: #4DA3FF;
+
+  /* SelectionOverlay (ContextMenu) */
+  --selection-overlay-selected-item-active-background-color: #3F86FF;
+  --selection-overlay-selected-item-background-color: #3C8AFF;
+
+  /* SideMenu */
+  --sidemenu-item-badge-background-color: #4DA3FF;
+  --sidemenu-item-badge-color: #3C8AFF;
+  --sidemenu-item-focused-color: #3C8AFF;
+  --sidemenu-item-selected-background-color: #3C8AFF;
+  --sidemenu-responsive-item-selected-background-color: #3C8AFF;
+  --sidemenu-responsive-item-separator-color: #4DA3FF;
+  --sidemenu-responsive-title-background-color: #9B99B1;
+
+  /* SourceCodeEditor */
+  --sourcecodeeditor-selection-background-color: #4DA3FF;
+
+  /* SplitPanel */
+  --splitpanel-splitter-background-color: #4DA3FF;
+  --splitpanel-splitter-border-color: #4DA3FF;
+  --splitpanel-splitter-large-border-color: #4DA3FF;
+  --splitpanel-splitter-large-handle-color: #4DA3FF;
+
+  /* SuggestionField */
+  --suggestionfield-modified-background-color: #4DA3FF;
+
+  /* TabSheet */
+  --tabsheet-drop-indicator-color: #3C8AFF;
+  --tabsheet-framed-content-border-color: #4DA3FF;
+  --tabsheet-framed-tabcontainer-border-color: #4DA3FF;
+  --tabsheet-framed-tabitemcell-selected-background-color: #4DA3FF;
+  --tabsheet-scroller-button-active-color: #3F86FF;
+  --tabsheet-scroller-button-hover-color: #3C8AFF;
+  --tabsheet-tabcontainer-border-color: #4DA3FF;
+  --tabsheet-tabitemcell-caption-close-active-color: #3F86FF;
+  --tabsheet-tabitemcell-caption-close-hover-color: #5159FF;
+  --tabsheet-tabitemcell-caption-focus-color: #3C8AFF;
+  --tabsheet-tabitemcell-caption-hover-color: #3C8AFF;
+  --tabsheet-tabitemcell-selected-color: #3C8AFF;
+  --tabsheet-tabitemcell-selected-deco-color: #3C8AFF;
+
+  /* Table */
+  --table-focused-row-border-color: #3C8AFF;
+  --table-hovered-row-background-color: #4DA3FF;
+  --table-selected-row-background-color: #3C8AFF;
+  --table-selected-row-border-color: #5159FF;
+
+  /* TagLabel */
+  --taglabel-background-color: #3C8AFF;
+  --taglabel-disabled-background-color: #4DA3FF;
+  --taglabel-hover-background-color: #5159FF;
+
+  /* TagPicker */
+  --tagpicker-tag-background-color: #3C8AFF;
+  --tagpicker-tag-hover-background-color: #5159FF;
+
+  /* Tooltip */
+  --tooltip-error-message-font-color: #DF1537;
+  --tooltip-error-message-level-error-font-color: #DF1537;
+  --tooltip-error-message-level-system-font-color: #3C8AFF;
+
+  /* Tree */
+  --tree-border-color: #4DA3FF;
+  --tree-focused-row-border-color: #3C8AFF;
+  --tree-selected-row-background-color: #3C8AFF;
+  --tree-selected-row-border-color: #5159FF;
+  --tree-selected-row-focus-ring-color: #4DA3FF;
+
+  /* TreeGrid */
+  --tree-grid-focused-row-border-color: #5159FF;
+  --tree-grid-selected-row-focus-ring-color: #4DA3FF;
+
+}

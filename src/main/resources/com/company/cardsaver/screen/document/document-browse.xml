@@ -47,11 +47,11 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="dateStart"/>
-                <column id="issueOrganization"/>
+                <column id="client"/>
                 <column id="isActive"/>
                 <column id="documentType"/>
-                <column id="client"/>
+                <column id="dateStart"/>
+                <column id="issueOrganization"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
