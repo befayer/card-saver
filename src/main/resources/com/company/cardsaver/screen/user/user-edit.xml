@@ -42,6 +42,13 @@
                 <comboBox id="timeZoneField" property="timeZoneId"/>
                 <checkBox id="activeField" property="active"/>
             </column>
+            <column>
+                <fileStorageUpload id="pictureField" property="picture"/>
+                <image id="image" property="picture"
+                       scaleMode="CONTAIN"
+                       rowspan="10" caption=""
+                       height="200" width="200"/>
+            </column>
         </form>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
